@@ -1,10 +1,12 @@
-import Home from './pages/Home'
 import AppRouter from './router'
+import { Outlet } from "react-router-dom"
+
 function App() {
   return (
     <>
-      {/* <Home /> */}
+
       <AppRouter />
+      <Outlet />
     </>
   )
 }

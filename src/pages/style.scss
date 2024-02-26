@@ -1,0 +1,99 @@
+@import "./../components/varaibles.scss";
+@font-face {
+  font-family: "caveat";
+  src: url("./../assets/fonts/Caveat/Caveat-VariableFont_wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "caveat";
+  src: url("./../assets/fonts/Caveat/static/Caveat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "inter";
+  src: url("./../assets/fonts/Inter/static/Inter-Bold.ttf") forma("truetype");
+}
+
+@font-face {
+  font-family: "open sans";
+  src: url("./../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "roboto";
+  src: url("./../assets//fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url("./../assets//fonts/Poppins/Poppins-ExtraBold.ttf")
+    format("truetype");
+}
+
+.sign-up-section {
+  padding: 10vh 10vh;
+
+  .back-icon {
+    height: 60px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+  .login-img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    mix-blend-mode: darken;
+  }
+  h1 {
+    font-family: "Poppins bold";
+    color: #ed6c02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    margin: 0px 0px 20px 0px;
+    img {
+      height: 50px;
+    }
+  }
+  .or {
+    margin: 20px 0px;
+    text-align: center;
+  }
+  .other-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    div {
+      cursor: pointer;
+      background-color: $light-white;
+      padding: 18px 20px;
+      border-radius: 10px;
+      margin: 10px 0px;
+      display: flex;
+      align-items: center;
+      gap: 1.2em;
+      width: 100%;
+      // margin-left: 20px;
+      transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.571);
+      }
+      span {
+        font-family: "inter", sans-serif;
+        font-weight: bold;
+      }
+      img {
+        height: 50px;
+      }
+    }
+  }
+}

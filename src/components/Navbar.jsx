@@ -10,15 +10,35 @@ import List from '@mui/material/List';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
+
 import { logo } from '../assets'
 import { NavLink } from 'react-router-dom'
 
 const drawerWidth = 240;
-const navItems = ['home', 'about', 'contact', { label: 'Sign up', className: 'signup-button' }];
+const navItems = ['home', 'about', 'contact'];
+const settings = ['Profile', 'Cart', 'Logout'];
 
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [isTrue, setState] = React.useState(true)
+
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -36,7 +56,7 @@ function Navbar(props) {
         <List key={i}>
           <NavLink to={`/${item.label || item}`} key={item.label || item}>
             <Button
-              
+
               sx={{ color: item.label === 'Sign up' ? '#fff' : '' }}
               className={`${item.className} nav-menu`}
             >
@@ -45,6 +65,15 @@ function Navbar(props) {
           </NavLink>
         </List>
       ))}
+      <Box className='nav-login'>
+        {isTrue ? (
+          <NavLink to='/'>
+            <Button className="signup-button"
+            >Sign up
+            </Button>
+          </NavLink>
+        ) : undefined}
+      </Box>
     </Box>
   );
 
@@ -73,11 +102,11 @@ function Navbar(props) {
                 </div>
 
               </IconButton>
-              <IconButton
+              {/* <IconButton
                 sx={{ mr: 2, display: { sm: 'none' } }}
               >
                 <img src={logo} alt="logo" height='60px' />
-              </IconButton>
+              </IconButton> */}
             </div>
             <Typography
               variant="h6"
@@ -91,7 +120,7 @@ function Navbar(props) {
               {navItems.map((item) => (
                 <NavLink to={`/${item.label || item}`} key={item.label || item}>
                   <Button
-                    
+
                     sx={{ color: item.label === 'Sign up' ? '#fff' : '' }}
                     className={`${item.className} nav-menu`}
                   >
@@ -99,6 +128,43 @@ function Navbar(props) {
                   </Button>
                 </NavLink>
               ))}
+            </Box>
+            <Box className='nav-login'>
+              {isTrue ? (
+                <NavLink to='/'>
+                  <Button className="signup-button"
+                  >Sign up
+                  </Button>
+                </NavLink>
+              ) : (
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  </IconButton>
+                </Tooltip>
+              )}
+              <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
             </Box>
           </Toolbar>
         </AppBar>
@@ -128,12 +194,6 @@ function Navbar(props) {
   );
 }
 
-// DrawerAppBar.propTypes = {
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func,
-// };
+
 
 export default Navbar;

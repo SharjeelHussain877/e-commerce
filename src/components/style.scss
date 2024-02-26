@@ -160,6 +160,7 @@
     background-color: $white;
     color: $black;
     box-shadow: none;
+
     @media (max-width: 600px) {
       .burger-section {
         display: flex;
@@ -168,16 +169,24 @@
       }
     }
   }
-
-  .signup-button {
-    // Sign up btn CSS
-    font-weight: 400 !important;
-    background-color: $black;
-    color: $white !important;
-    &:hover {
-      color: $black !important;
-    }
+  .nav-login {
+    display: flex;
+    flex-grow: 0;
+    justify-content: center;
+    .signup-button {
+      // Sign up btn CSS
+      width: 100px;
+      font-family: 'Poppins';
+      background-color: $dark-yellow;
+      color: $white !important;
+      font-weight: bold;
+      letter-spacing: 2px;
+      &:hover {
+        background-color: $black;
+        color: $dark-yellow !important;
+      }
   }
+}
 
   
   // Nav Menu CSS
@@ -202,7 +211,7 @@
 // Hero CSS
 
 .hero {
-  margin-top: -40px;
+  // margin-top: -40px;
   background-color: $light-white;
   border-radius: 20px;
   max-height: 85vh;
@@ -713,5 +722,21 @@
         justify-content: center;
       }
     }
+  }
+}
+
+
+.form > :nth-child(1){
+  text-align: center;
+}
+
+.form {
+  .field {
+    width: 100% !important;
+  }
+  .signup-btn{
+    padding: 12px 0px 12px 0px;
+    width: 100%;
+    margin-left: 8px;
   }
 }
