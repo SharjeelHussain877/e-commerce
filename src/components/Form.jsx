@@ -65,7 +65,9 @@ function Form() {
         else if (!passWordState.state) alert("please fill correct password");
         else if (formData.password == '') alert("Please fill confirm password");
         else if (formData.password != password) alert("Password doesn't match");
-        else console.log("success", formData);
+        else {
+            alert(`Hello ${formData.first_name} ${formData.last_name}`)
+        };
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -85,6 +87,7 @@ function Form() {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
     return (
         <section className='form'>
             <Box
@@ -107,7 +110,6 @@ function Form() {
                         label="First name"
                         error={formData.first_name && !firstNameState.state ? true : false}
                         helperText={formData.first_name && firstNameState.message}
-
                     />
                     <TextField
                         className='field'
@@ -127,8 +129,7 @@ function Form() {
                         error={formData.phone_no && !phoneNumberState.state ? true : false}
                         id="outlined-error"
                         label="Phone number"
-                        helperText={formData.phone_no && phoneNumberState.message}
-
+                        helperText={formData.phone_no && phoneNumberState.message}  
                     />
 
                     {/* <TextField

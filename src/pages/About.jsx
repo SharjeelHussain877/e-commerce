@@ -6,11 +6,7 @@ function About() {
     return (
         <>
             <Navbar />
-            <NavLink
-                to="/"
-            >
-                about
-            </NavLink>
+            <h1>This page in progress</h1>
         </>
     )
 }

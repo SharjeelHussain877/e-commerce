@@ -18,32 +18,32 @@ export default function SignUp() {
             </NavLink>
             <React.Fragment>
                 <CssBaseline />
-                <Container maxWidth="lg">
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Grid container spacing={2}>
-                            <Grid item sm={0} md={6}>
-                                <img src={vector} alt="logIn" className='login-img' />
-                            </Grid>
-                            <Grid item sm={12} md={6}>
-                                <h1><img src={signupImg} alt="signup" /> Create Account</h1>
-                                <Form />
-                                <div className='or'>
-                                    <span>Or</span>
-                                </div>
-                                <div className='other-signup'>
-                                    <div>
-                                        <img src={googleIcon} alt="google-icon" />
-                                        <span>Continue with Google</span>
-                                    </div>
-                                    <div>
-                                        <img src={facebookIcon} alt="facebook-icon" />
-                                        <span>Continue with Facebook</span>
-                                    </div>
-                                </div>
-                            </Grid>
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={0} sm={6}>
+                            <img src={vector} alt="logIn" className='login-img' />
                         </Grid>
-                    </Box>
-                </Container>
+                        <Grid item xs={12} sm={6} className='main'>
+                            <h1><img src={signupImg} alt="signup" /> Create Account</h1>
+                            <div className='form-sec'>
+                                <Form />
+                            </div>
+                            <div className='or'>
+                                <span>Or</span>
+                            </div>
+                            <div className='other-signup'>
+                                <div>
+                                    <img src={googleIcon} alt="google-icon" />
+                                    <span>Continue with Google</span>
+                                </div>
+                                <div>
+                                    <img src={facebookIcon} alt="facebook-icon" />
+                                    <span>Continue with Facebook</span>
+                                </div>
+                            </div>
+                        </Grid>
+                    </Grid>
+                </Box>
             </React.Fragment>
         </div>
     );

@@ -151,12 +151,14 @@
 
 // Navbar CSS
 .header {
+  height: 86px;
   // Navbar CSS
   .web-name {
     font-size: 2em;
     font-family: "caveat", sans-serif;
   }
   .navbar {
+    padding: 10px 0px 10px 0px;
     background-color: $white;
     color: $black;
     box-shadow: none;
@@ -176,19 +178,18 @@
     .signup-button {
       // Sign up btn CSS
       width: 100px;
-      font-family: 'Poppins';
-      background-color: $dark-yellow;
+      font-family: "Poppins";
+      background-color: $light-yellow;
       color: $white !important;
       font-weight: bold;
       letter-spacing: 2px;
       &:hover {
         background-color: $black;
-        color: $dark-yellow !important;
+        color: $light-yellow !important;
       }
+    }
   }
-}
 
-  
   // Nav Menu CSS
   .active > * {
     color: $yellow !important;
@@ -196,7 +197,7 @@
   .nav-menu {
     color: #000000be;
     font-family: "Poppins", sans-serif;
-    transition: .2s;
+    transition: 0.2s;
     margin: 0px 4px;
     font-weight: bold;
     &:hover {
@@ -205,21 +206,22 @@
       transform: translateY(-2px);
       box-shadow: 0px 3px 5px #00000083;
     }
+    &::selection {
+      background-color: transparent;
+    }
   }
 }
 
 // Hero CSS
 
 .hero {
-  // margin-top: -40px;
   background-color: $light-white;
   border-radius: 20px;
   max-height: 85vh;
+  margin-top: 10px;
   overflow: hidden;
-
   // hero text section
   .hero-text {
-    height: 100%;
     font-family: "Poppins", sans-serif;
     padding: 1.8rem 0px;
     margin-left: 50px;
@@ -269,13 +271,42 @@
     position: relative;
 
     img {
-      filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.321));
+      filter: drop-shadow(-40px 0px 16px rgba(0, 0, 0, 0.321));
       overflow: visible;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top;
     }
+  }
+}
+
+@media (max-width: 564px) {
+  .hero {
+    border-radius: 0;
+    z-index: 1;
+    position: relative;
+    background-image: url(./../assets/images/shoppingLite.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    .hero-text {
+      color: $white;
+      h1 span:first-child {
+        background-color: $black;
+      }
+    }
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
   }
 }
 
@@ -323,7 +354,7 @@
 
   .title-section {
     display: flex;
-    
+
     .title {
       width: 80%;
       color: $black;
@@ -338,8 +369,7 @@
       text-overflow: ellipsis;
       white-space: normal;
       font-weight: 400;
-      font-family: 'Poppins bold', sans-serif;
-
+      font-family: "Poppins bold", sans-serif;
     }
 
     .icon {
@@ -353,7 +383,7 @@
     }
     .icon > * {
       transform: translateX(-8px);
-      transition: .2s;
+      transition: 0.2s;
       font-size: 1.8rem;
       &:hover {
         transform: translateX(2px);
@@ -397,7 +427,7 @@
       z-index: 0;
       position: relative;
     }
-    @media (max-width:350px) {
+    @media (max-width: 350px) {
       span {
         font-size: 1.6em;
       }
@@ -524,15 +554,13 @@
             width: 15%;
             color: #666666;
             cursor: pointer;
-            
           }
           .icon > * {
             font-size: 1.8rem;
-            transition: .2s;
+            transition: 0.2s;
             &:hover {
               color: $black;
               transform: translateX(6px);
-              
             }
           }
         }
@@ -673,7 +701,6 @@
     box-shadow: none;
     color: $white;
     background-color: transparent;
-    
   }
   .section-two > *,
   .section-three > *,
@@ -725,18 +752,55 @@
   }
 }
 
-
-.form > :nth-child(1){
+.form > :nth-child(1) {
   text-align: center;
 }
 
 .form {
+  padding: 20px 20px;
   .field {
     width: 100% !important;
   }
-  .signup-btn{
+  .signup-btn {
+    margin-left: 8px;
     padding: 12px 0px 12px 0px;
     width: 100%;
-    margin-left: 8px;
+  }
+}
+
+@media (max-width: 546px) {
+  .form {
+    z-index: 1;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.567
+    ); /* Background color with 80% opacity */
+    padding: 20px 20px;
+    background-image: url(./../assets/images/signup-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    left: 5px;
+
+    label{
+      color: $white;
+      font-family: 'Poppins',sans-serif;
+    }
+    input {
+      color: $white;
+      font-family: 'Poppins',sans-serif;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.846);
+    }
   }
 }
