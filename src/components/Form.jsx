@@ -23,8 +23,6 @@ import { validatePassword, validateName, validatePhoneNumber, validateEmail } fr
 function Form() {
     const [showPassword, setShowPassword] = React.useState(false);
     const [password, setPassword] = React.useState('');
-
-    const [showConfirmPassword, setShowConfirmPassword] = React.useState(false);
     const [formData, setFormData] = React.useState({
         first_name: '',
         last_name: '',
@@ -59,8 +57,8 @@ function Form() {
         else if (!phoneNumberState.state) alert("please enter your correct Phone number");
         else if (formData.email == "") alert("Please enter your email");
         else if (!emailState.state) alert("please enter your correct email address");
-        else if (formData.gender == "") alert("please select your gender")
-        else if (formData.date_of_birth == "") alert("please fill date of birth");
+        // else if (formData.gender == "") alert("please select your gender")
+        // else if (formData.date_of_birth == "") alert("please fill date of birth");
         else if (password == "") alert("please fill password");
         else if (!passWordState.state) alert("please fill correct password");
         else if (formData.password == '') alert("Please fill confirm password");
@@ -129,7 +127,7 @@ function Form() {
                         error={formData.phone_no && !phoneNumberState.state ? true : false}
                         id="outlined-error"
                         label="Phone number"
-                        helperText={formData.phone_no && phoneNumberState.message}  
+                        helperText={formData.phone_no && phoneNumberState.message}
                     />
 
                     {/* <TextField
@@ -152,7 +150,7 @@ function Form() {
 
                     />
 
-                    <FormControl sx={{ m: 1, minWidth: 120 }}
+                    {/* <FormControl sx={{ m: 1, minWidth: 120 }}
                         className='field'
                     >
                         <InputLabel id="demo-simple-select-standard-label" color='warning'>Gender</InputLabel>
@@ -168,8 +166,8 @@ function Form() {
                             <MenuItem value='female'>Female</MenuItem>
                             <MenuItem value="custom">Custom</MenuItem>
                         </Select>
-                    </FormControl>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    </FormControl> */}
+                    {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DatePicker label="Date of Birth"
                             className='field'
                             slotProps={{
@@ -179,7 +177,7 @@ function Form() {
                             }}
                             name="date_of_birth"
                             onChange={handleDatePickerChange} />
-                    </LocalizationProvider>
+                    </LocalizationProvider> */}
 
 
                     <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" color={password && passWordState.health != 100 ? "error" : 'warning'}
