@@ -9,7 +9,6 @@ import { googleIcon, facebookIcon, vector, signupImg, backIcon } from './../asse
 import { NavLink } from 'react-router-dom';
 
 
-
 export default function SignUp() {
     return (
         <div className='sign-up-section'>

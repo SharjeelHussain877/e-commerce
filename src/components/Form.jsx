@@ -66,7 +66,18 @@ function Form() {
         else if (formData.password != password) alert("Password doesn't match");
         else {
             alert(`Hello ${formData.first_name} ${formData.last_name}`)
-            sign_up(formData)
+            // sign_up(formData)
+            setPassword('')
+            setFormData({
+                first_name: '',
+                last_name: '',
+                phone_no: '',
+                city: '',
+                email: '',
+                gender: '',
+                password: '',
+                date_of_birth: ''
+            })
         };
     }
 
@@ -102,6 +113,7 @@ function Form() {
             >
                 <div>
                     <TextField
+                        value={formData.first_name}
                         className='field'
                         name="first_name"
                         onChange={handleFormChange}
@@ -112,6 +124,7 @@ function Form() {
                         helperText={formData.first_name && firstNameState.message}
                     />
                     <TextField
+                        value={formData.last_name}
                         className='field'
                         name="last_name"
                         onChange={handleFormChange}
@@ -122,6 +135,7 @@ function Form() {
                         helperText={formData.last_name && lastNameState.message}
                     />
                     <TextField
+                        value={formData.phone_no}
                         className='field'
                         name="phone_no"
                         onChange={handleFormChange}
@@ -141,6 +155,7 @@ function Form() {
                         helperText={`${!false ? 'Please check your name' : ''}`}
                     /> */}
                     <TextField
+                        value={formData.email}
                         className='field'
                         name="email"
                         onChange={handleFormChange}
@@ -171,14 +186,14 @@ function Form() {
                     </FormControl> */}
                     {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DatePicker label="Date of Birth"
-                            className='field'
-                            slotProps={{
-                                textField: ({ position }) => ({
-                                    color: 'warning',
-                                }),
-                            }}
-                            name="date_of_birth"
-                            onChange={handleDatePickerChange} />
+                        className='field'
+                        slotProps={{
+                            textField: ({ position }) => ({
+                                color: 'warning',
+                            }),
+                        }}
+                        name="date_of_birth"
+                        onChange={handleDatePickerChange} />
                     </LocalizationProvider> */}
 
 
@@ -187,6 +202,7 @@ function Form() {
                     >
                         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                         <OutlinedInput
+                            value={password}
                             onChange={e => setPassword(e.target.value)}
                             id="outlined-adornment-password"
                             type={showPassword ? 'text' : 'password'}
@@ -218,40 +234,10 @@ function Form() {
 
                     </FormControl>
 
-                    {/* <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" color='warning'
-                    error={formData.password && formData.password != password}
-                        className='field'
-                    >
-                        <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
-                        <OutlinedInput
-                            name="password"
-                            onChange={handleFormChange}
-                            id="outlined-adornment-password"
-                            type={showConfirmPassword ? 'text' : 'password'}
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="toggle password visibility"
-                                        onClick={handleClickShowConfirmPassword}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end"
-                                    >
-                                        {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-                                    </IconButton>
-                                </InputAdornment>
-                            }
-                            label="Confirm Password"
-                        />
-                        <FormHelperText error={true}>
-                            {formData.password && formData.password != password && (
-                                "Password doesn't match"
-                            )}
-                        </FormHelperText>
-                    </FormControl> */}
-
                     <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" color='warning' className='field'>
                         <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
                         <OutlinedInput
+                            value={formData.password}
                             name="password"
                             onChange={handleFormChange}
                             id="outlined-adornment-password"

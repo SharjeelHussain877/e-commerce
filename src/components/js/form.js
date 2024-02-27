@@ -15,7 +15,7 @@ function validateName(name) {
   if (name.length < 4) {
     return {
       state: false,
-      message: "Name should be at least 2 characters long.",
+      message: "Name should be at least 4 characters long.",
     };
   }
   if (name.length > 50) {
