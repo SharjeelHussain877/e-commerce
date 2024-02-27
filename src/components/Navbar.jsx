@@ -17,15 +17,18 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-
 import { logo } from '../assets'
 import { NavLink } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 const drawerWidth = 240;
 const navItems = ['home', 'about', 'contact'];
 const settings = ['Profile', 'Cart', 'Logout'];
 
 function Navbar(props) {
+  const user = useSelector((state) => state.userDetails.userInfo);
+  console.log(user)
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -130,7 +133,7 @@ function Navbar(props) {
               ))}
             </Box>
             <Box className='nav-login'>
-              {isTrue ? (
+              {user == null ? (
                 <NavLink to='/'>
                   <Button className="signup-button"
                   >Sign up

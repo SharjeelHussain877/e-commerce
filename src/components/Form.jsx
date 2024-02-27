@@ -19,6 +19,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { validatePassword, validateName, validatePhoneNumber, validateEmail } from './js/form.js'
+import sign_up from '../firebase/userSignUp.js';
 
 function Form() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -65,23 +66,24 @@ function Form() {
         else if (formData.password != password) alert("Password doesn't match");
         else {
             alert(`Hello ${formData.first_name} ${formData.last_name}`)
+            sign_up(formData)
         };
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-    const handleGenderChange = (event) => {
-        setFormData({
-            ...formData,
-            gender: event.target.value,
-        });
-    };
-    const handleDatePickerChange = (event) => {
-        setFormData({
-            ...formData,
-            date_of_birth: event.$d,
-        });
-    };
+    // const handleGenderChange = (event) => {
+    //     setFormData({
+    //         ...formData,
+    //         gender: event.target.value,
+    //     });
+    // };
+    // const handleDatePickerChange = (event) => {
+    //     setFormData({
+    //         ...formData,
+    //         date_of_birth: event.$d,
+    //     });
+    // };
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
@@ -256,13 +258,13 @@ function Form() {
                             type='password'
                             endAdornment={
                                 <InputAdornment position="end">
-                                    <IconButton
+                                    {/* <IconButton
                                         aria-label="toggle password visibility"
                                         onMouseDown={handleMouseDownPassword}
                                         edge="end"
                                     >
                                         {<VisibilityOff />}
-                                    </IconButton>
+                                    </IconButton> */}
                                 </InputAdornment>
                             }
                             label="Confirm Password"
