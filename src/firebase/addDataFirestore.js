@@ -3,7 +3,7 @@ import { db, collection, addDoc } from "./firestore";
 const addData = async (userData) => {
   try {
     const docRef = await addDoc(collection(db, "users"), userData);
-    console.log("Document written with ID: ", docRef.id);
+    alert(`Hello ${userData.fullName}`)
   } catch (e) {
     console.error("Error adding document: ", e);
   }

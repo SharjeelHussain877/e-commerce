@@ -49,7 +49,7 @@ function Form() {
     };
 
     const signup = () => {
-        if (formData.full_name == "") alert("Please enter your first name");
+        if (formData.full_name == "") alert("Please enter your name");
         else if (!fullNameState.state) alert("Please enter your correct name");
         // else if (formData.last_name == "") alert("Please enter your last name");
         // else if (!lastNameState.state) alert("Please enter your correct last name");
@@ -64,7 +64,7 @@ function Form() {
         else if (formData.password == '') alert("Please fill confirm password");
         else if (formData.password != password) alert("Password doesn't match");
         else {
-            // sign_up(formData)
+            sign_up(formData)
             setPassword('')
             setFormData({
                 first_name: '',
@@ -77,7 +77,6 @@ function Form() {
                 date_of_birth: ''
             })
         };
-        alert(`Hello ${formData.full_name}`)
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -114,7 +113,7 @@ function Form() {
                     <TextField
                         value={formData.first_name}
                         className='field'
-                        name="first_name"
+                        name="full_name"
                         onChange={handleFormChange}
                         color='warning'
                         id="outlined-error"

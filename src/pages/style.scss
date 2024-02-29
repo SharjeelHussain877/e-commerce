@@ -31,26 +31,44 @@
     height: 60px;
     left: 2em;
   }
+  h1 {
+    font-family: "Poppins";
+    text-align: center;
+    color: $yellow;
+  }
   @media (max-width: 600px) {
+    h1 {
+      margin-bottom: 10px;
+    }
     .back-icon {
       position: absolute;
       height: 40px;
       top: 18px;
       left: 20px;
       filter: drop-shadow(-2px 2px 2px #0000007b);
-    } 
-  }
-  h1 {
-    font-family: "Poppins bold";
-    text-align: center;
-    color: $yellow;
-    gap: 0.6em;
-    margin-left: 20px;
+    }
   }
 }
 .or {
   margin: 20px 0px;
   text-align: center;
+}
+.login {
+  margin: 10px 0px 30px 0px;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  span {
+    a {
+      text-decoration: none;
+      color: $yellow;
+      transition: all .2s;
+      &:hover {
+      color: $dark-yellow;
+      
+    }
+    }
+  }
 }
 .main {
   padding: 0px 10px;

@@ -13,9 +13,9 @@ import { NavLink } from 'react-router-dom';
 export default function SignUp() {
     return (
         <div className='sign-up-section'>
-                                <NavLink to='/'>
-                                    <img src={backIcon} alt="back-icon" className='back-icon' />
-                                </NavLink>
+            <NavLink to='/'>
+                <img src={backIcon} alt="back-icon" className='back-icon' />
+            </NavLink>
             <React.Fragment>
                 <CssBaseline />
                 <Container maxWidth='md'>
@@ -33,6 +33,11 @@ export default function SignUp() {
                                     <span>Or</span>
                                 </div>
                                 <GoogleSignUp />
+                                <div className='login'>
+                                    <span>Akready have an accout? 
+                                        <NavLink to='/login'> Sign in</NavLink>
+                                    </span>
+                                </div>
                             </Grid>
                         </Grid>
                     </Box>
