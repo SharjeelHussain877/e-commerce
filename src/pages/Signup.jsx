@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 export default function SignUp() {
     return (
         <div className='sign-up-section'>
-            <NavLink to='/home'>
+            <NavLink to='/'>
                 <img src={backIcon} alt="back-icon" className='back-icon' />
             </NavLink>
             <React.Fragment>

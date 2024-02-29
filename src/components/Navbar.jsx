@@ -70,7 +70,7 @@ function Navbar(props) {
       ))}
       <Box className='nav-login'>
         {isTrue ? (
-          <NavLink to='/'>
+          <NavLink to='/signup'>
             <Button className="signup-button"
             >Sign up
             </Button>
@@ -134,7 +134,7 @@ function Navbar(props) {
             </Box>
             <Box className='nav-login'>
               {user == null ? (
-                <NavLink to='/'>
+                <NavLink to='/signup'>
                   <Button className="signup-button"
                   >Sign up
                   </Button>
