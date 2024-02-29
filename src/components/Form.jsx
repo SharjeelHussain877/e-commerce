@@ -25,8 +25,7 @@ function Form() {
     const [showPassword, setShowPassword] = React.useState(false);
     const [password, setPassword] = React.useState('');
     const [formData, setFormData] = React.useState({
-        first_name: '',
-        last_name: '',
+        full_name: '',
         phone_no: '',
         city: '',
         email: '',
@@ -36,8 +35,8 @@ function Form() {
     });
 
     const passWordState = validatePassword(password)
-    const firstNameState = validateName(formData.first_name)
-    const lastNameState = validateName(formData.last_name)
+    const fullNameState = validateName(formData.full_name)
+    // const lastNameState = validateName(formData.last_name)
     const phoneNumberState = validatePhoneNumber(formData.phone_no)
     const emailState = validateEmail(formData.email)
 
@@ -50,10 +49,10 @@ function Form() {
     };
 
     const signup = () => {
-        if (formData.first_name == "") alert("Please enter your first name");
-        else if (!firstNameState.state) alert("Please enter your correct name");
-        else if (formData.last_name == "") alert("Please enter your last name");
-        else if (!lastNameState.state) alert("Please enter your correct last name");
+        if (formData.full_name == "") alert("Please enter your first name");
+        else if (!fullNameState.state) alert("Please enter your correct name");
+        // else if (formData.last_name == "") alert("Please enter your last name");
+        // else if (!lastNameState.state) alert("Please enter your correct last name");
         else if (formData.phone_no == "") alert("Please enter your Phone number");
         else if (!phoneNumberState.state) alert("please enter your correct Phone number");
         else if (formData.email == "") alert("Please enter your email");
@@ -65,7 +64,6 @@ function Form() {
         else if (formData.password == '') alert("Please fill confirm password");
         else if (formData.password != password) alert("Password doesn't match");
         else {
-            alert(`Hello ${formData.first_name} ${formData.last_name}`)
             // sign_up(formData)
             setPassword('')
             setFormData({
@@ -79,6 +77,7 @@ function Form() {
                 date_of_birth: ''
             })
         };
+        alert(`Hello ${formData.full_name}`)
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -119,11 +118,11 @@ function Form() {
                         onChange={handleFormChange}
                         color='warning'
                         id="outlined-error"
-                        label="First name"
-                        error={formData.first_name && !firstNameState.state ? true : false}
-                        helperText={formData.first_name && firstNameState.message}
+                        label="Full name"
+                        error={formData.full_name && !fullNameState.state ? true : false}
+                        helperText={formData.full_name && fullNameState.message}
                     />
-                    <TextField
+                    {/* <TextField
                         value={formData.last_name}
                         className='field'
                         name="last_name"
@@ -133,7 +132,7 @@ function Form() {
                         id="outlined-error"
                         label="Last name"
                         helperText={formData.last_name && lastNameState.message}
-                    />
+                    /> */}
                     <TextField
                         value={formData.phone_no}
                         className='field'

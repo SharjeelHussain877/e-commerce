@@ -9,8 +9,7 @@ import signupImg from './images/signup.png'
 import googleIcon from './images/google.webp'
 import facebookIcon from './images/facebook.png'
 import backIcon from './images/back.png'
-import vector from './images/vector.jpg'
-import brandBG from './images/shoppingLite.webp'
+import vector from './images/sign-up.png'
 
 // brand images
 import amazon from './images/amazon-vector.png'
@@ -22,4 +21,4 @@ import shopify from './images/shopify-vector.webp'
 
 const brandsImageArr = [amazon, hm, lacoste, levis, obey, shopify]
 
-export {backIcon, googleIcon, facebookIcon,brandBG, heroImg, heroVector, bannerImg, cardImg, cardImg2, ourAppImg, logo, signupImg,vector, brandsImageArr,};
+export {backIcon, googleIcon, facebookIcon, heroImg, heroVector, bannerImg, cardImg, cardImg2, ourAppImg, logo, signupImg,vector, brandsImageArr,};

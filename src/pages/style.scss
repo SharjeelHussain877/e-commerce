@@ -11,84 +11,47 @@
 }
 
 .sign-up-section {
-  padding: 4vh 0vh;
-  .back-icon {
-    margin-left: 6%;
-    height: 60px;
-    cursor: pointer;
-    transition: all 0.3s;
-    &:hover {
-      transform: translateY(-8px);
-    }
-  }
+  background-image: linear-gradient(#fff, #ffee0017);
+  padding: 4vh 0px 0px 0vh;
+  background-color: rgba(255, 196, 0, 0.048);
+  overflow: hidden;
   .login-img {
+    mix-blend-mode: darken;
+    overflow: visible;
     height: 100%;
+    position: relative;
+    left: -20px;
     object-fit: cover;
     width: 100%;
-    mix-blend-mode: darken;
+  }
+  .back-icon {
+    position: absolute;
+    cursor: pointer;
+    top: 40px;
+    height: 60px;
+    left: 2em;
+  }
+  @media (max-width: 600px) {
+    .back-icon {
+      position: absolute;
+      height: 40px;
+      top: 18px;
+      left: 20px;
+      filter: drop-shadow(-2px 2px 2px #0000007b);
+    } 
   }
   h1 {
     font-family: "Poppins bold";
-    color: $yellow;
-    display: flex;
-    align-items: center;
-    gap: 0.6em;
-    margin: 0px 0px 20px 0px;
-    margin-left: 20px;
-    line-height: 32px;
-    img {
-      height: 50px;
-    }
-  }
-  @media (max-width: 546px) {
-   h1 {
-margin-left: 10px;
-   }
-    }
-  }
-  .or {
-    margin: 20px 0px;
     text-align: center;
+    color: $yellow;
+    gap: 0.6em;
+    margin-left: 20px;
   }
-  .main {
-    padding: 0px 10px;
-  }
-  .other-signup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    div {
-      cursor: pointer;
-      background-color: $light-white;
-      padding: 18px 20px;
-      border-radius: 10px;
-      margin: 10px 0px;
-      margin-left: 20px;
-      width: 92%;
-      display: flex;
-      align-items: center;
-      gap: 1.2em;
-      transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-      transform: translateY(-4px);
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.571);
-      // &:hover {
-      //   transform: translateY(0px);
-      //   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.571)inset;
-      // }
-      &:active {
-        transform: translateY(0px);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.571) inset;
-      }
-      span {
-        font-family: "inter", sans-serif;
-        font-weight: bold;
-        &::selection {
-          background: none;
-        }
-      }
-      img {
-        height: 50px;
-      }
-    }
-  }
+}
+.or {
+  margin: 20px 0px;
+  text-align: center;
+}
+.main {
+  padding: 0px 10px;
+}

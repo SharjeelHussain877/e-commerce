@@ -39,21 +39,21 @@ const validatePassword = (password) => {
   const errors = [];
   let health = 0;
 
-  if (password.length < 8) {
-    errors.push("Password must be at least 8 characters long.");
+  if (password.length < 6) {
+    errors.push("Password must be at least 6 characters long.");
   } else {
-    health += 30;
+    health += 50;
   }
   if (!/\d/.test(password)) {
     errors.push("Password must contain at least one digit.");
   } else {
-    health += 30;
+    health += 50;
   }
-  if (!isContainSpecialCharacter(password)) {
-    errors.push("Password must contain at least one special character.");
-  } else {
-    health += 40;
-  }
+  // if (!isContainSpecialCharacter(password)) {
+  //   errors.push("Password must contain at least one special character.");
+  // } else {
+  //   health += 40;
+  // }
   if (errors.length === 0) {
     return {
       message: "Password is strong and meets all requirements.",
