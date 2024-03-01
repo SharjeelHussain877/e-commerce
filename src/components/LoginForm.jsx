@@ -90,7 +90,7 @@ function LoginForm() {
                     <Button variant="contained" color="warning" className='signin-btn' >Sign in</Button>
                 </form>
                 <Typography variant="subtitle1" className='text'>
-                    Don’t have an account? <br /><NavLink> Sign up fo free!</NavLink>
+                    Don’t have an account? <br /><NavLink to='/signup'> Sign up fo free!</NavLink>
                 </Typography>
             </Box>
         </section>
