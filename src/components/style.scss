@@ -788,13 +788,13 @@
     position: relative;
     left: 5px;
 
-    label{
+    label {
       color: $white;
-      font-family: 'Poppins',sans-serif;
+      font-family: "Poppins", sans-serif;
     }
     input {
       color: $white;
-      font-family: 'Poppins',sans-serif;
+      font-family: "Poppins", sans-serif;
     }
     &::before {
       content: "";
@@ -807,7 +807,6 @@
     }
   }
 }
-
 
 .other-signup {
   display: flex;
@@ -843,6 +842,121 @@
     }
     img {
       height: 40px;
+    }
+  }
+}
+
+
+.login {
+  padding: 20px 25px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(240, 248, 255, 0.19);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  .head {
+    font-size: 2.4em;
+    text-align: start;
+    text-transform: uppercase;
+    margin: 0.1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .sub-title {
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    text-align: start;
+    color: rgb(101, 101, 101);
+  }
+  form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    .field {
+      margin: 10px 0px;
+      input {
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+  }
+  .forgot {
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    .remember {
+      cursor: pointer;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+      text-align: start;
+      color: rgb(101, 101, 101);
+      color: $black;
+      .remember-check {
+        position: relative;
+        span {
+          font-family: "Poppins", sans-serif;
+        }
+        top: -10px;
+        .check {
+          color: $dark-yellow;
+        }
+      }
+    }
+  }
+  .signin-btn {
+    padding: 12px 0px;
+    font-size: 16px;
+    font-family: 'open sans', sans-serif;
+  }
+  .text {
+    margin: 20px 0px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    a {
+      color: $yellow;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px rgb(0, 0, 0);
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .login {
+    padding: 20px 25px;
+    background-color: rgba(255, 255, 255, 0.213);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    .head {
+      text-align: start;
+      text-transform: uppercase;
+      margin: 0.1em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+    }
+    .sub-title {
+      text-shadow: -1px 1px 2px rgb(44, 44, 44);
+      color: $yellow ;
+    }
+    form {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      .field {
+        border-radius: 8px;
+        background-color: #f1ae3929;
+        input {
+          color: $black
+        }
+      }
+    }
+    .forgot {
+      margin: 1em 0;
+      display: flex;
+    flex-direction: column;
     }
   }
 }

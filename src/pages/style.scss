@@ -62,14 +62,34 @@
     a {
       text-decoration: none;
       color: $yellow;
-      transition: all .2s;
+      transition: all 0.2s;
       &:hover {
-      color: $dark-yellow;
-      
-    }
+        color: $dark-yellow;
+      }
     }
   }
 }
 .main {
   padding: 0px 10px;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(./../assets/images/shopping.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    background-color: rgba(0, 0, 0, 0.457);
+    background-position: center;
+  }
+  .login-page::before {
+    background-color: rgba(0, 0, 0, 0.457);
+  }
 }
