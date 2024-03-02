@@ -68,6 +68,7 @@
       text-decoration: none;
       color: $yellow;
       transition: all 0.2s;
+      text-decoration: underline;
       &:hover {
         color: $dark-yellow;
       }

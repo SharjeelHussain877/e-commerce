@@ -884,14 +884,13 @@
       font-weight: 500;
       font-family: "Poppins", sans-serif;
       text-align: start;
-      color: $grey;
       color: $black;
       .remember-check {
         position: relative;
+        top: -10px;
         span {
           font-family: "Poppins", sans-serif;
         }
-        top: -10px;
         .check {
           color: $dark-yellow;
         }
@@ -912,7 +911,6 @@
       color: $dark-yellow;
       font-size: 1em;
       font-weight: bold;
-      letter-spacing: 1px;
     }
   }
 }
@@ -1001,7 +999,12 @@
     top: 6px;
   }
   .contact-info > * > *:nth-child(2) {
+    text-decoration: none;
+    color: $white;
     margin-left: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .icons > * {
