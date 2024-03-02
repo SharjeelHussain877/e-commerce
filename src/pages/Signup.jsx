@@ -34,7 +34,7 @@ export default function SignUp() {
                                 </div>
                                 <GoogleSignUp />
                                 <div className='login'>
-                                    <span>Akready have an accout? 
+                                    <span>Already have an accout? <br /> 
                                         <NavLink to='/login'> Sign in</NavLink>
                                     </span>
                                 </div>

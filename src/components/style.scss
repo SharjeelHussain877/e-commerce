@@ -913,12 +913,10 @@
     font-family: "Poppins", sans-serif;
     text-align: center;
     a {
-      color: $yellow;
-      font-size: 1.2em;
-      text-shadow: 1px 1px 3px rgb(0, 0, 0);
-      text-decoration: none;
+      color: $dark-yellow;
+      font-size: 1em;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
   }
 }
@@ -926,7 +924,6 @@
 @media (max-width: 600px) {
   .login {
     padding: 20px 25px;
-    background-color: rgba(255, 255, 255, 0.213);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -936,9 +933,6 @@
       margin: 0.1em;
       font-family: "Poppins", sans-serif;
       font-weight: 600;
-    }
-    .sub-title {
-      text-shadow: -1px 1px 2px rgb(44, 44, 44);
       color: $yellow ;
     }
     form {

@@ -78,18 +78,4 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(./../assets/images/shopping.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-}
-
-@media (max-width: 600px) {
-  .login-page {
-    background-color: rgba(0, 0, 0, 0.457);
-    background-position: center;
-  }
-  .login-page::before {
-    background-color: rgba(0, 0, 0, 0.457);
-  }
 }

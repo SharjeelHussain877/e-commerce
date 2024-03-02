@@ -16,13 +16,13 @@ import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { NavLink } from 'react-router-dom';
+import logIn from '../firebase/userSignIn';
 
 function LoginForm() {
     const [signInData, setSignInData] = React.useState({
         email: '',
         password: ''
     });
-    console.log(signInData)
 
     const [showPassword, setShowPassword] = React.useState(false);
 
@@ -39,6 +39,27 @@ function LoginForm() {
         });
     };
 
+    const signIn = async () => {
+        if (signInData.email == '' || signInData.password == '') {
+            alert('Please fill all fields!');
+        } else {
+            logIn(signInData)
+                .then((loggedIn) => {
+                    if (loggedIn) {
+                        setSignInData({
+                            email: '',
+                            password: ''
+                        })
+                    } else {
+                        alert('Please check! Something went wrong')
+                    }
+                })
+                .catch((error) => {
+                    console.error(error); // Handle any errors
+                });
+        }
+    }
+
     return (
         <section >
             <Box className='login' sx={{ maxWidth: 500 }}>
@@ -50,6 +71,7 @@ function LoginForm() {
                 </Typography>
                 <form>
                     <TextField
+                        value={signInData.email}
                         onChange={handleFormChange}
                         label='email'
                         className='field'
@@ -60,6 +82,7 @@ function LoginForm() {
                     <FormControl variant="outlined" className='field' color='warning'>
                         <InputLabel >Password</InputLabel>
                         <OutlinedInput
+                            value={signInData.password}
                             id="outlined-adornment-password"
                             type={showPassword ? 'text' : 'password'}
                             onChange={handleFormChange}
@@ -87,7 +110,7 @@ function LoginForm() {
                             Forgot Password
                         </Typography>
                     </Box>
-                    <Button variant="contained" color="warning" className='signin-btn' >Sign in</Button>
+                    <Button variant="contained" color="warning" className='signin-btn' onClick={signIn}>Sign in</Button>
                 </form>
                 <Typography variant="subtitle1" className='text'>
                     Don’t have an account? <br /><NavLink to='/signup'> Sign up fo free!</NavLink>
