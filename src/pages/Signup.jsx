@@ -5,16 +5,17 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Form } from '../components';
-import { vector, backIcon } from './../assets';
+import { vector } from './../assets';
 import GoogleSignUp from './../components/GoogleAndFacebook.jsx';
 import { NavLink } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 export default function SignUp() {
     return (
         <div className='sign-up-section'>
             <NavLink to='/'>
-                <img src={backIcon} alt="back-icon" className='back-icon' />
+                <ArrowBackIcon className='back-icon'/>
             </NavLink>
             <React.Fragment>
                 <CssBaseline />

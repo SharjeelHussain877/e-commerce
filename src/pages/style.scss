@@ -25,11 +25,16 @@
     width: 100%;
   }
   .back-icon {
-    position: absolute;
     cursor: pointer;
-    top: 40px;
-    height: 60px;
+    position: absolute;
+    top: 30px;
     left: 2em;
+    font-size: 50px;
+    color: $grey;
+    transition: all 0.3s;
+    &:hover {
+      color: $light-black;
+    }
   }
   h1 {
     font-family: "Poppins";
@@ -41,11 +46,11 @@
       margin-bottom: 10px;
     }
     .back-icon {
-      position: absolute;
-      height: 40px;
+      margin-top: -30px;
+      position: relative;
       top: 18px;
       left: 20px;
-      filter: drop-shadow(-2px 2px 2px #0000007b);
+      filter: drop-shadow(1px 3px 2px $black);
     }
   }
 }
@@ -74,47 +79,63 @@
 }
 
 .login-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   .back-icon {
-    position: absolute;
     cursor: pointer;
-    top: 40px;
-    height: 60px;
-    left: 2em;
-  }
-  .login-section {
-    border-radius: 20px;
-    .back-icon {
-      position: absolute;
-      cursor: pointer;
-      top: 40px;
-      height: 60px;
-      left: 2em;
+    position: absolute;
+    top: 30px;
+    left: 1em;
+    font-size: 50px;
+    color: $grey;
+    transition: all 0.3s;
+    &:hover {
+      color: $light-black;
     }
-    .login-img {
+  }
+  .login-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .login-section {
       border-radius: 20px;
-      overflow: hidden;
-      box-shadow: -12px 12px 18px #00000044;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+      .login-img {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: -12px 12px 18px #00000044;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
 }
 
-
 @media (max-width: 600px) {
   .login-page {
     .back-icon {
-      position: absolute;
-      cursor: pointer;
-      height: 40px;
+      position: relative;
+      left: 0.4em;
+    }
+  }
+}
+
+.contact {
+  background-color: $light-white;
+  padding: 24px 0px 0px 0px;
+  .contact-sec {
+    border-radius: 20px;
+    padding: 14px 18px;
+    background-color: $white;
+  }
+}
+@media (max-width: 600px) {
+  .contact {
+    .contact-sec {
+      padding: 0px;
     }
   }
 }

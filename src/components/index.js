@@ -8,5 +8,8 @@ import OurApp from "./OurApp";
 import Community from "./Community";
 import Footer from "./Footer";
 import Form from "./Form";
+import PageHeader from "./pageHeader";
+import ContactCard from "./ContactCard";
+import ContactForm from "./ContactForm";
 
-export {Navbar, Hero, Brands, Products, Banner, YoungsFavourite, OurApp, Community,Footer, Form}
+export {Navbar, Hero, Brands, Products, Banner, YoungsFavourite, OurApp, Community,Footer, Form, PageHeader, ContactCard, ContactForm}

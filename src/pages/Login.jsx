@@ -6,18 +6,16 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import LoginForm from '../components/LoginForm';
 import { login } from '../assets';
-import { backIcon } from '../assets';
 import { NavLink } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Login() {
   return (
-
-    <section className='login-page'>
-      <div>
-      <NavLink to='/'>
-        <img src={backIcon} alt="back-icon" className='back-icon' />
-      </NavLink>
-      </div>
+<section className='login-page'>
+        <NavLink to='/'>
+          <ArrowBackIcon className='back-icon'/>
+        </NavLink>
+    <div className='login-sec'>
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="lg">
@@ -33,7 +31,8 @@ function Login() {
           </Box>
         </Container>
       </React.Fragment>
-    </section>
+    </div>
+</section>
   )
 }
 
