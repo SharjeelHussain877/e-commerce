@@ -15,7 +15,7 @@
   padding: 4vh 0px 0px 0vh;
   background-color: rgba(255, 196, 0, 0.048);
   overflow: hidden;
-  .login-img {
+  .signup-side-img {
     mix-blend-mode: darken;
     overflow: visible;
     height: 100%;
@@ -75,7 +75,46 @@
 
 .login-page {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  .back-icon {
+    position: absolute;
+    cursor: pointer;
+    top: 40px;
+    height: 60px;
+    left: 2em;
+  }
+  .login-section {
+    border-radius: 20px;
+    .back-icon {
+      position: absolute;
+      cursor: pointer;
+      top: 40px;
+      height: 60px;
+      left: 2em;
+    }
+    .login-img {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: -12px 12px 18px #00000044;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .login-page {
+    .back-icon {
+      position: absolute;
+      cursor: pointer;
+      height: 40px;
+    }
+  }
 }

@@ -22,7 +22,7 @@ export default function SignUp() {
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={0} sm={6} display={{ xs: "none", sm: "block" }}>
-                                <img src={vector} alt="logIn" className='login-img' />
+                                <img src={vector} alt="logIn" className='signup-side-img' />
                             </Grid>
                             <Grid item xs={12} sm={6} className='main'>
                                 <h1>Create Account</h1>
