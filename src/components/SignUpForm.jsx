@@ -64,11 +64,10 @@ function Form() {
         else if (formData.password == '') alert("Please fill confirm password");
         else if (formData.password != password) alert("Password doesn't match");
         else {
-            sign_up(formData)
+            // sign_up(formData)
             setPassword('')
             setFormData({
-                first_name: '',
-                last_name: '',
+                full_name: '',
                 phone_no: '',
                 city: '',
                 email: '',
@@ -111,7 +110,7 @@ function Form() {
             >
                 <div>
                     <TextField
-                        value={formData.first_name}
+                        value={formData.full_name}
                         className='field'
                         name="full_name"
                         onChange={handleFormChange}

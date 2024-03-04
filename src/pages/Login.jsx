@@ -12,7 +12,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 function Login() {
   return (
 <section className='login-page'>
-        <NavLink to='/'>
+        <NavLink to='/home'>
           <ArrowBackIcon className='back-icon'/>
         </NavLink>
     <div className='login-sec'>

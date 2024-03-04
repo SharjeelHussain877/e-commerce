@@ -766,8 +766,18 @@
     position: relative;
     left: -8px;
     width: 100% !important;
+    label {
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    input {
+      font-family: 'Poppins', sans-serif;
+    }
   }
   .signup-btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     padding: 12px 0px 12px 0px;
     width: 100%;
   }
@@ -836,11 +846,8 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.571) inset;
     }
     span {
-      font-family: "inter", sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: bold;
-      &::selection {
-        background: none;
-      }
     }
     img {
       height: 40px;
@@ -875,6 +882,10 @@
       margin: 10px 0px;
       input {
         font-family: "Poppins", sans-serif;
+      }
+      label {
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
       }
     }
   }

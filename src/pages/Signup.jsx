@@ -14,7 +14,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 export default function SignUp() {
     return (
         <div className='sign-up-section'>
-            <NavLink to='/'>
+            <NavLink to='/home'>
                 <ArrowBackIcon className='back-icon'/>
             </NavLink>
             <React.Fragment>
