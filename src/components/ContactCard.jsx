@@ -6,6 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PinDropIcon from '@mui/icons-material/PinDrop';
+import { NavLink } from 'react-router-dom';
 
 function ContactCard() {
     return (
@@ -18,19 +19,19 @@ function ContactCard() {
                 <Box mt={7} className='contact-info'>
                     <Typography mt={2} variant='body1'>
                         <WhatsAppIcon />
-                        <a href='https://wa.me/+923252105103'>+92 3252105103</a>
+                        <NavLink to='https://wa.me/+923252105103'>+92 3252105103</NavLink>
                     </Typography>
                     <Typography mt={2} variant='body1'>
                         <MailOutlineIcon />
-                        <a href='mailto:sharjeelhussain877@gmail.com'>sharjeelhussain877@gmail.com</a>
+                        <NavLink to='mailto:sharjeelhussain877@gmail.com'>sharjeelhussain877@gmail.com</NavLink>
                     </Typography>
                     <Typography mt={2} variant='body1'>
                         <PinDropIcon />
-                        <a href='https://www.google.com/maps?q=24.980749,66.9853283'>
+                        <NavLink to='https://www.google.com/maps?q=24.980749,66.9853283'>
                             75800 Gulshan-e-zia
                             Orangi Town, KHI
                             PK
-                        </a>
+                        </NavLink>
                     </Typography>
                 </Box>
                 <Box mt={8} className='icons'>
