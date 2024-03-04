@@ -27,13 +27,11 @@ const settings = ['Profile', 'Cart', 'Logout'];
 
 function Navbar(props) {
   const user = useSelector((state) => state.userDetails.userInfo);
-  console.log(user)
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [isTrue, setState] = React.useState(true)
-
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -57,9 +55,8 @@ function Navbar(props) {
       <Divider />
       {navItems.map((item, i) => (
         <List key={i}>
-          <NavLink to={`/${item.label || item}`} key={item.label || item}>
+          <NavLink to={`/${item.label || item}`} key={item.label || item} className="menu">
             <Button
-
               sx={{ color: item.label === 'Sign up' ? '#fff' : '' }}
               className={`${item.className} nav-menu`}
             >

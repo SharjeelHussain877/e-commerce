@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 function About() {
     return (
         <>
+        <Navbar/>
             <h1>This page in progress</h1>
         </>
     )

@@ -13,7 +13,7 @@ export default function Brands() {
       }, [])
     
     return (
-        <section data-aos="fade-up">
+        <section data-aos="fade-up" offset={20}>
             <React.Fragment>
                 <CssBaseline />
                 <Box sx={{ overflowX: 'scroll' }} className="brands">

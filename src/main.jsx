@@ -5,9 +5,7 @@ import {
   RouterProvider,
   createRoutesFromElements,
   Route,
-  Routes,
 } from "react-router-dom";
-import App from "./App.jsx";
 import "./index.css";
 import { store } from "./redux/store.js";
 import { Provider } from "react-redux";
@@ -20,13 +18,11 @@ import Login from "./pages/Login.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="" element={<App />}>
-        <Route path="" element={<Home />} />
+      <Route>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-      </Route>
-      <Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Route>
@@ -41,3 +37,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </React.StrictMode>
   </Provider>
 );
+
+
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //     <>
+  //       <Route path="" element={<App />}>
+  //         <Route path="" element={<Home />} />
+  //         <Route path="/home" element={<Home />} />
+  //         <Route path="/contact" element={<Contact />} />
+  //         <Route path="/about" element={<About />} />
+  //       </Route>
+  //       <Route>
+  //         <Route path="/login" element={<Login />} />
+  //         <Route path="/signup" element={<SignUp />} />
+  //       </Route>
+  //     </>
+  //   )
+  // );

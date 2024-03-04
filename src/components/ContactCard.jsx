@@ -35,9 +35,15 @@ function ContactCard() {
                     </Typography>
                 </Box>
                 <Box mt={8} className='icons'>
-                    <TwitterIcon />
-                    <InstagramIcon />
-                    <FacebookIcon />
+                    <NavLink to='https://twitter.com/ShrjilHussain'>
+                        <TwitterIcon />
+                    </NavLink>
+                    <NavLink to='https://www.instagram.com/sharjeelhussain877/'>
+                        <InstagramIcon />
+                    </NavLink>
+                    <NavLink to='https://www.facebook.com/profile.php?id=61551475233524'>
+                        <FacebookIcon />
+                    </NavLink>
                 </Box>
             </Container>
         </div>

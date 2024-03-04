@@ -7,9 +7,25 @@ import YoungsFavourite from "./YoungsFavourite";
 import OurApp from "./OurApp";
 import Community from "./Community";
 import Footer from "./Footer";
-import Form from "./Form";
+import Form from "./SignUpForm";
 import PageHeader from "./pageHeader";
 import ContactCard from "./ContactCard";
 import ContactForm from "./ContactForm";
+import Loader from "./Loader";
 
-export {Navbar, Hero, Brands, Products, Banner, YoungsFavourite, OurApp, Community,Footer, Form, PageHeader, ContactCard, ContactForm}
+export {
+  Navbar,
+  Hero,
+  Brands,
+  Products,
+  Banner,
+  YoungsFavourite,
+  OurApp,
+  Community,
+  Footer,
+  Form,
+  PageHeader,
+  ContactCard,
+  ContactForm,
+  Loader,
+};

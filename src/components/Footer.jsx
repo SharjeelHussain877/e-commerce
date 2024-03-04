@@ -8,6 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { NavLink } from 'react-router-dom';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -26,30 +27,78 @@ function Footer() {
                         <Typography variant='h4'>Fashion</Typography>
                         <Typography variant='body2'>Complete your style with awesome clothes from us.</Typography>
                         <Item className='icons'>
-                            <InstagramIcon/>
-                            <FacebookOutlinedIcon/>
-                            <XIcon/>
-                            <LinkedInIcon/>
+                            <NavLink to='https://www.instagram.com/sharjeelhussain877/'>
+                                <InstagramIcon />
+                            </NavLink>
+                            <NavLink to='https://www.facebook.com/profile.php?id=61551475233524'>
+                                <FacebookOutlinedIcon />
+                            </NavLink>
+                            <NavLink to='https://twitter.com/ShrjilHussain'>
+                                <XIcon />
+                            </NavLink>
+                            <NavLink to='https://www.linkedin.com/in/sharjeelhussain877/'>
+                                <LinkedInIcon />
+                            </NavLink>
                         </Item>
                     </Grid>
                     <Grid item xs={12} sm={4} md={2} className='section-two'>
                         <Typography variant='h5'>Company</Typography>
-                        <Item>About</Item>
-                        <Item>Contact us</Item>
-                        <Item>Support</Item>
-                        <Item>Career</Item>
+                        <Item>
+                            <NavLink to='/about'>
+                                About
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                Contact us
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                Support
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                Career
+                            </NavLink>
+                        </Item>
                     </Grid>
                     <Grid item xs={12} sm={4} md={3} className='section-three'>
                         <Typography variant='h5'>Quick Link</Typography>
-                        <Item>Share Location</Item>
-                        <Item>Order Tracking</Item>
-                        <Item>Size Guide</Item>
-                        <Item>FAQs</Item>
+                        <Item>
+                            <NavLink>
+                                Share Location
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                Order Tracking
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                Size Guide
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                FAQs
+                            </NavLink>
+                        </Item>
                     </Grid>
                     <Grid item xs={12} sm={4} md={3} className='section-four'>
                         <Typography variant='h5'>Legal</Typography>
-                        <Item>Terms & Conditions</Item>
-                        <Item>Privacy Policy</Item>
+                        <Item>
+                            <NavLink>
+                                Terms & Conditions
+                            </NavLink>
+                        </Item>
+                        <Item>
+                            <NavLink>
+                                Privacy Policy
+                            </NavLink>
+                        </Item>
                     </Grid>
 
                 </Grid>
