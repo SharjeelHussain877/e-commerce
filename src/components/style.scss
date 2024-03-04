@@ -192,22 +192,21 @@
 
   // Nav Menu CSS
   .active > * {
-    color: $yellow !important;
+    color: $dark-yellow !important;
   }
+
   .nav-menu {
     color: $light-black;
     font-family: "Poppins", sans-serif;
     transition: 0.2s;
     margin: 0px 4px;
     font-weight: bold;
+
     &:hover {
       color: $black !important;
-      background-color: $yellow;
+      background-color: $yellow !important;
       transform: translateY(-2px);
       box-shadow: 0px 3px 5px #00000083;
-    }
-    &::selection {
-      background-color: transparent;
     }
   }
 }
@@ -218,7 +217,6 @@
   background-color: $light-white;
   border-radius: 20px;
   max-height: 85vh;
-  margin-top: 10px;
   overflow: hidden;
   // hero text section
   .hero-text {
@@ -655,9 +653,10 @@
     .icons {
       display: flex;
       gap: 10px;
+      margin-top: 8px;
       margin-left: -10px;
     }
-    .icons > * {
+    .icons > * > * {
       cursor: pointer;
       position: relative;
       display: block;
@@ -716,10 +715,14 @@
     }
   }
 
-  .section-two > *:not(:first-child),
-  .section-three > *:not(:first-child),
-  .section-four > *:not(:first-child) {
+  .section-two > *:not(:first-child) > *,
+  .section-three > *:not(:first-child) > *,
+  .section-four > *:not(:first-child) > * {
     transition: 0.3s;
+    text-decoration: none;
+    color: $white;
+    text-transform: capitalize;
+    
     &:hover {
       color: $yellow;
     }
@@ -1007,7 +1010,12 @@
     }
   }
 
-  .icons > * {
+  .icons {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .icons > * > * {
+    user-select: none;
     color: $white;
     cursor: pointer;
     padding: 10px;
@@ -1018,6 +1026,7 @@
     transition: all 0.2s;
     box-shadow: -2px -6px 4px #000000bb inset;
     border: 1px solid #abababbb;
+
     &:hover {
       background-color: $white;
       color: $black;
@@ -1039,7 +1048,9 @@
 .contact-form {
   .fields > * > * {
     width: 100%;
-    input, Textarea, label{
+    input,
+    Textarea,
+    label {
       font-family: "Poppins", sans-serif;
     }
     label {
@@ -1052,5 +1063,45 @@
   }
   .contact-btn {
     padding: 10px 0px;
+  }
+}
+
+// Loader
+.load {
+  min-height: 96vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #ff3d00 100%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #263238;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
