@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 import { NavLink } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
@@ -233,6 +233,7 @@ function About() {
           </Container>
         </Grid>
       </Grid>
+      <Footer/>
     </>
   );
 }
