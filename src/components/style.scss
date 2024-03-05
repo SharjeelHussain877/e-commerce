@@ -349,7 +349,18 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 20px;
-
+  
+  .card {
+    min-width: 16em;
+    overflow: hidden !important;
+  }
+  img {
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
   .title-section {
     display: flex;
 

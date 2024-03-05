@@ -4,7 +4,7 @@ const initialState = {
     userInfo: null, 
 };
 
-export const counterSlice = createSlice({
+export const signedUpUser = createSlice({
   name: "userInfo",
   initialState,
   reducers: {
@@ -15,5 +15,5 @@ export const counterSlice = createSlice({
 });
 
 
-export const { reduxSaveData } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { reduxSaveData } = signedUpUser.actions;
+export default signedUpUser.reducer;

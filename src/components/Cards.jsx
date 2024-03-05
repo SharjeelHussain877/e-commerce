@@ -6,24 +6,27 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { useEffect } from 'react';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Cards({ productsArr }) {
+export default function Cards({ products }) {
   useEffect(() => {
     AOS.init();
   }, [])
-  
+
+
   return (
     <div className='cards'>
-      {productsArr ? (
+      {products ? (
         <>
-          {productsArr.slice(0, 3).map(v => (
-            <Card key={v.id} sx={{ maxWidth: 280 }} data-aos="zoom-out">
+          {products.slice(0, 3).map(v => (
+            <Card key={v.id} sx={{ maxWidth: 280 }} data-aos="zoom-out" className='card'>
               <CardMedia
+              className='image'
                 component="img"
                 height="300"
-                image={v.img}
+                image={v.image}
                 alt="Product img"
               />
               <CardContent>
@@ -36,7 +39,7 @@ export default function Cards({ productsArr }) {
                   </Typography>
                 </div>
                 <Typography variant="body1" color="text.secondary" className='slogan'>
-                  {v.slogan}
+                  Explore now!
                 </Typography>
               </CardContent>
             </Card>

@@ -4,7 +4,6 @@ import { dispatch } from './../redux/store.js';
 import { reduxSaveData } from './../redux/slices/userInfo.js';
 
 const sign_up = (userObj) => {
-  // const dispatch = useDispatch();
   
   createUserWithEmailAndPassword(auth, userObj.email, userObj.password)
     .then((userCredential) => {

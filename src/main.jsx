@@ -16,6 +16,7 @@ import SignUp from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Loader from "./components/Loader.jsx";
 import { useSelector } from 'react-redux';
+import getData from "./firebase/getDataFirestore.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +43,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
+
+  const products = useSelector((state) => state.savedProducts);
+  React.useEffect(function () {
+    if (products.length == 0) {
+        getData()
+    }
+}, [])
+
   return (
     <>
       {isLoading ? <Loader /> : <RouterProvider router={router} />}
