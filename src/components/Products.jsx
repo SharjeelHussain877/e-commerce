@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 import { heroImg, cardImg, cardImg2 } from '../assets';
 import { useSelector } from 'react-redux';
 
-const products = [
+const product = [
     {
         id: 123,
         title: "A beautiful girl in beautyfull abaya hai le lo ma jaldo!",
@@ -36,7 +36,7 @@ const products = [
 
 const Products = () => {
 
-    // const products = useSelector((state) => state.savedProducts);
+    const products = useSelector((state) => state.savedProducts);
 
     return (
         <div>

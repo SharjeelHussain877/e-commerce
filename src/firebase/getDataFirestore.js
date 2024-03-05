@@ -22,5 +22,6 @@ const getData = async () => {
   }
 };
 
+getData()
 
 export default getData;
