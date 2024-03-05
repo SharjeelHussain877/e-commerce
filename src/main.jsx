@@ -14,6 +14,8 @@ import Contact from "./pages/Contact.jsx";
 import About from "./pages/About.jsx";
 import SignUp from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
+import Loader from "./components/Loader.jsx";
+import { useSelector } from 'react-redux';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,25 +35,34 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <App />
     </React.StrictMode>
   </Provider>
 );
 
+function App() {
+  const isLoading = useSelector((state) => state.isLoading);
+  return (
+    <>
+      {isLoading ? <Loader /> : <RouterProvider router={router} />}
+    </>
+  );
+}
 
-  // const router = createBrowserRouter(
-  //   createRoutesFromElements(
-  //     <>
-  //       <Route path="" element={<App />}>
-  //         <Route path="" element={<Home />} />
-  //         <Route path="/home" element={<Home />} />
-  //         <Route path="/contact" element={<Contact />} />
-  //         <Route path="/about" element={<About />} />
-  //       </Route>
-  //       <Route>
-  //         <Route path="/login" element={<Login />} />
-  //         <Route path="/signup" element={<SignUp />} />
-  //       </Route>
-  //     </>
-  //   )
-  // );
+
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <>
+//       <Route path="" element={<App />}>
+//         <Route path="" element={<Home />} />
+//         <Route path="/home" element={<Home />} />
+//         <Route path="/contact" element={<Contact />} />
+//         <Route path="/about" element={<About />} />
+//       </Route>
+//       <Route>
+//         <Route path="/login" element={<Login />} />
+//         <Route path="/signup" element={<SignUp />} />
+//       </Route>
+//     </>
+//   )
+// );
