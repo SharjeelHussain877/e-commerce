@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { useEffect } from 'react';
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -14,16 +13,14 @@ export default function Cards({ products }) {
   useEffect(() => {
     AOS.init();
   }, [])
-
-
   return (
     <div className='cards'>
-      {products ? (
+      {products.length != 0 ? (
         <>
           {products.slice(0, 3).map(v => (
-            <Card key={v.id} sx={{ maxWidth: 280 }} data-aos="zoom-out" className='card'>
+            <Card key={v.productId} sx={{ maxWidth: 280 }} data-aos="zoom-out" className='card'>
               <CardMedia
-              className='image'
+                className='image'
                 component="img"
                 height="300"
                 image={v.image}

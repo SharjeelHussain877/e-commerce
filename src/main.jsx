@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
@@ -16,7 +16,9 @@ import SignUp from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Loader from "./components/Loader.jsx";
 import { useSelector } from 'react-redux';
-import getData from "./firebase/getDataFirestore.js";
+import { dispatch } from "./redux/store.js";
+import { useEffect } from "react";
+import getData from './firebase/getDataFirestore.js'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,17 +45,18 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
-
-  const products = useSelector((state) => state.savedProducts);
-  React.useEffect(function () {
-    if (products.length == 0) {
-        getData()
+  const [isApiCalled, setStatus] = useState(false)
+  useEffect(() => {
+    const fetch = async () => {
+      const data = await getData()
+      setStatus(!isApiCalled)
     }
-}, [])
+    fetch()
+  }, [])
 
   return (
     <>
-      {isLoading ? <Loader /> : <RouterProvider router={router} />}
+      {isApiCalled == isLoading ? <Loader /> : <RouterProvider router={router} />}
     </>
   );
 }

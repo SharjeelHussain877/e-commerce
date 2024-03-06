@@ -349,16 +349,14 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 20px;
-  
+
   .card {
     min-width: 16em;
-    overflow: hidden !important;
-  }
-  img {
     cursor: pointer;
     transition: all .3s;
     &:hover {
-      transform: scale(1.1);
+      transition: all .3s;
+      box-shadow: 0px 2px 10px #00000055;
     }
   }
   .title-section {
@@ -733,7 +731,7 @@
     text-decoration: none;
     color: $white;
     text-transform: capitalize;
-    
+
     &:hover {
       color: $yellow;
     }
@@ -779,14 +777,14 @@
     width: 100% !important;
     label {
       font-weight: 600;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
     input {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
   }
   .signup-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     letter-spacing: 0.1em;
     padding: 12px 0px 12px 0px;
@@ -896,7 +894,7 @@
       }
       label {
         font-weight: 600;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
     }
   }

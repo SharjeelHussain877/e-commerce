@@ -13,6 +13,7 @@ const Home = () => {
             <OurApp />
             <Community />
             <Footer />
+
         </>
     )
 }

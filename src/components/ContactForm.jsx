@@ -32,13 +32,13 @@ function ContactForm() {
         if (isAllFieldsFilled) {
             showLoader(reduxCheckState())
             const isSubmitted = await addData(contactDetails, "user-contact")
-            showLoader(reduxCheckState())
             setContactDetails({
                 credentialName: '',
                 credentialEmail: '',
                 credentialSubject: '',
                 credentialMessage: '',
             })
+            showLoader(reduxCheckState())
             alert("Thank you for submit your good things!")
         } else {
             alert("Please fill all fields!")
