@@ -15,6 +15,7 @@ import About from "./pages/About.jsx";
 import SignUp from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Loader from "./components/Loader.jsx";
+import ProductPreview from "./pages/ProductPreview.jsx";
 import { useSelector } from 'react-redux';
 import { dispatch } from "./redux/store.js";
 import { useEffect } from "react";
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/products/:id" element={<ProductPreview />} />
       </Route>
     </>
   )

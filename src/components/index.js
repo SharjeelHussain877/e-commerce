@@ -12,6 +12,8 @@ import PageHeader from "./pageHeader";
 import ContactCard from "./ContactCard";
 import ContactForm from "./ContactForm";
 import Loader from "./Loader";
+import ImageCarousel from "./ImageCarousel";
+import ProductDetails from "./ProductDetails";
 
 export {
   Navbar,
@@ -28,4 +30,6 @@ export {
   ContactCard,
   ContactForm,
   Loader,
+  ImageCarousel,
+  ProductDetails,
 };

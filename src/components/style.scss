@@ -353,9 +353,9 @@
   .card {
     min-width: 16em;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     &:hover {
-      transition: all .3s;
+      transition: all 0.3s;
       box-shadow: 0px 2px 10px #00000055;
     }
   }
@@ -1123,5 +1123,129 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.image-carousel {
+  // display: flex; 
+}
+
+.image-carousel img {
+  border-radius: 4px;
+  width: 100%; 
+  height: 70vh; 
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease-in-out;
+}
+.image-carousel .carousel .thumbs li img {
+  cursor: pointer;
+  border-radius: 0px;
+  height: 80px;
+}
+.image-carousel .carousel .control-next, .control-prev {
+  display: none;
+}
+.image-carousel img.hovered {
+  z-index: 1;
+}
+
+.product-details {
+  padding: 1em 0em;
+  h1 {
+    font-family: "Poppins bold", sans-serif;
+    text-transform: capitalize;
+    line-height: 1.2em;
+    color: $black;
+  }
+  h3 {
+    margin: 4px 0px;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    span {
+      color: $yellow;
+    }
+  }
+  .pricing {
+    display: flex;
+    margin: 10px 0px;
+    .child-1 {
+      padding: 4px 6px;
+      font-size: 2em;
+      background-color: $light-black;
+      border-radius: 5px;
+      color: $white;
+      font-family: "roboto", sans-serif;
+      span {
+        color: $dark-yellow;
+        position: relative;
+        top: -10px;
+        font-size: 18px;
+      }
+    }
+    .child-2 {
+      margin-left: 28px;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    .child-2 > *:nth-child(1) {
+      font-weight: bold;
+      color: $dark-yellow;
+      font-size: 1.4em;
+    }
+    .child-2 > *:nth-child(2) {
+      font-weight: bold;
+      color: $black;
+      font-size: 0.8em;
+    }
+  }
+  .description {
+    font-family: "Poppins", sans-serif;
+    margin: 14px 0px;
+  }
+  .add-to-cart {
+    display: flex;
+    align-items: center;
+    .qty {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      width: 5.4em;
+      height: 3em;
+    }
+    .add-to-cart-btn {
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      align-items: center;
+      background-color: $black;
+      padding: 12px 12px;
+      .icon {
+        margin-right: 4px;
+      }
+    }
+  }
+  .profile-id {
+    margin-top: 10px;
+    display: flex;
+  }
+  .profile-id > div {
+    margin-top: -2px;
+    margin-left: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+  }
+  .profile-id div div {
+    p:nth-child(1) {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    p:nth-child(2) {
+      font-family: "Inter", sans-serif;
+      color: $grey;
+      font-size: 14px;
+    }
   }
 }

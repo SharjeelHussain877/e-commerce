@@ -8,11 +8,13 @@ import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { NavLink } from 'react-router-dom';
 
 export default function Cards({ products }) {
   useEffect(() => {
     AOS.init();
   }, [])
+  
   return (
     <div className='cards'>
       {products.length != 0 ? (
@@ -32,7 +34,9 @@ export default function Cards({ products }) {
                     {v.title}
                   </Typography>
                   <Typography variant="h6" className='icon'>
+                    <NavLink to={`/products/id=${v?.productId}`}>
                     <TrendingFlatIcon />
+                    </NavLink>
                   </Typography>
                 </div>
                 <Typography variant="body1" color="text.secondary" className='slogan'>

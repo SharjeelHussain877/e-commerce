@@ -191,3 +191,10 @@
     padding: 10px 0;
   }
 }
+
+.detail {
+  .main > * > * {
+    margin: 2em 0em;
+    overflow: hidden;
+  }
+}
