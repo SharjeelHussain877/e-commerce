@@ -29,7 +29,7 @@ function ProductPreview() {
         <div className='detail'>
             <Navbar />
             <div role="presentation">
-                <Breadcrumbs mb={3} ml={3} aria-label="breadcrumb">
+                <Breadcrumbs m={3} mt={0} aria-label="breadcrumb">
                     <Link
                         underline="hover"
                         sx={{ display: 'flex', alignItems: 'center' }}
