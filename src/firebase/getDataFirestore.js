@@ -5,7 +5,7 @@ import { reduxAddProduct } from "../redux/slices/products.js";
 
 const getData = () => {
     return new Promise(async (resolve, reject) => {
-        dispatch(reduxCheckState());
+        // dispatch(reduxCheckState());
         let arr = [];
         try {
             const q = query(collection(db, "products"), limit(3));
@@ -20,11 +20,11 @@ const getData = () => {
                 });
             }
             dispatch(reduxAddProduct(arr));
-            dispatch(reduxCheckState());
+            // dispatch(reduxCheckState());
             resolve(arr); 
         } catch (error) {
             console.error("Error getting documents: ", error);
-            dispatch(reduxCheckState());
+            // dispatch(reduxCheckState());
             reject(error);
         }
     });

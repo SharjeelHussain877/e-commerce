@@ -11,7 +11,7 @@ const sign_up = (userObj) => {
       if (user) {
         userObj.userId = user.uid;
         addData(userObj, "users");
-        dispatch(reduxSaveData(userObj));
+        // dispatch(reduxSaveData(userObj));
       }
     })
     .catch((error) => {

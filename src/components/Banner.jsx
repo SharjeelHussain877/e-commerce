@@ -13,17 +13,18 @@ import Button from '@mui/material/Button';
 
 function Banner() {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+    });
   }, [])
 
   return (
       <div className='banner'>
         <React.Fragment>
           <CssBaseline />
-          <Container maxWidth="lg" className='main'  data-aos="fade-up">
+          <Container maxWidth="lg" className='main'  data-aos="fade-up" data-aos-duration="1000">
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2}>
-                <Grid xs={0} sm={5} md={6} className='banner-img'>
+                <Grid  xs={0} sm={5} md={6} className='banner-img'>
                   <img src={bannerImg} alt="modal-image" />
                 </Grid>
                 <Grid xs={12} sm={7} md={6}>

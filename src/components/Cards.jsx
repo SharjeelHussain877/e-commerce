@@ -14,13 +14,14 @@ export default function Cards({ products }) {
   useEffect(() => {
     AOS.init();
   }, [])
-  
+
   return (
     <div className='cards'>
       {products.length != 0 ? (
         <>
           {products.slice(0, 3).map(v => (
-            <Card key={v.productId} sx={{ maxWidth: 280 }} data-aos="zoom-out" className='card'>
+            <Card key={v.productId} sx={{ maxWidth: 280 }} data-aos="fade-up"
+              data-aos-duration="700" data-aos-delay="500" className='card'>
               <CardMedia
                 className='image'
                 component="img"
@@ -35,7 +36,7 @@ export default function Cards({ products }) {
                   </Typography>
                   <Typography variant="h6" className='icon'>
                     <NavLink to={`/products/id=${v?.productId}`}>
-                    <TrendingFlatIcon />
+                      <TrendingFlatIcon />
                     </NavLink>
                   </Typography>
                 </div>
