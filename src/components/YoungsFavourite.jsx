@@ -38,7 +38,7 @@ const YoungsFavourite = () => {
                 <Container maxWidth="lg" className='main'>
                     {
                         FavouriteArr && FavouriteArr.map(v => (
-                            <Box className='favourite-card' key={v.id} data-aos="zoom-out-down">
+                            <Box className='favourite-card' key={v.id} data-aos="fade-up" data-aos-duration="1000">
                                 <div>
                                     <img src={v.img} alt="" />
                                 </div>

@@ -16,7 +16,7 @@ export default function Community() {
   }, [])
 
   return (
-    <div className='community' data-aos="fade-up" data-aos-offset="100">
+    <div className='community' data-aos="fade-up" data-aos-duration="1000">
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="lg" className='main'>
