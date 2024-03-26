@@ -20,10 +20,12 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { logo } from '../assets'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import logOut from "../firebase/logOut";
+
 
 const drawerWidth = 240;
 const navItems = ['home', 'about', 'contact'];
-const settings = ['Profile', 'Cart', 'Logout'];
+const settings = [{ menu: "Profile", call: "" }, { menu: "logout", call: "" }, { menu: "logout", call: logOut() }];
 
 function Navbar(props) {
   const user = useSelector((state) => state.userDetails.userInfo);
@@ -130,7 +132,7 @@ console.log(user)
               ))}
             </Box>
             <Box className='nav-login'>
-              {user == null ? (
+              {!user.status ? (
                 <NavLink to='/signup'>
                   <Button className="signup-button"
                   >Sign up
@@ -159,9 +161,12 @@ console.log(user)
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                {settings.map((setting, index) => (
+                  <MenuItem key={index} onClick={() => {
+                    handleCloseUserMenu()
+                    // setting.call()
+                  }}>
+                    <Typography textAlign="center">{setting.menu}</Typography>
                   </MenuItem>
                 ))}
               </Menu>

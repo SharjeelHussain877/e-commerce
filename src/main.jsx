@@ -22,6 +22,7 @@ import { useEffect } from "react";
 import getData from './firebase/getDataFirestore.js'
 import isUserLogin from "./firebase/isLogin.js";
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -60,6 +61,8 @@ function App() {
     fetch()
     isUserLogin()
   }, [])
+  
+  
 
 
   return (

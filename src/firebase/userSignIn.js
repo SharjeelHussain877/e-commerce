@@ -1,18 +1,21 @@
 import { auth, signInWithEmailAndPassword } from "./auth";
+import { dispatch } from "../redux/store";
+import { reduxCheckState } from "../redux/slices/isLoading";
 
 const logIn = (userObj) => {
-  console.log(userObj);
   return new Promise((resolve, reject) => {
+    dispatch(reduxCheckState());
     signInWithEmailAndPassword(auth, userObj.email, userObj.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user.uid);
         resolve(true);
+        dispatch(reduxCheckState());
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         reject(false);
+        dispatch(reduxCheckState());
       });
   });
 };

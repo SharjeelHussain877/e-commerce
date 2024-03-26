@@ -15,10 +15,13 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logIn from '../firebase/userSignIn';
+import isUserLogin from '../firebase/isLogin';
 
 function LoginForm() {
+    const navigate = useNavigate();
+
     const [signInData, setSignInData] = React.useState({
         email: '',
         password: ''
@@ -46,15 +49,17 @@ function LoginForm() {
             logIn(signInData)
                 .then((loggedIn) => {
                     if (loggedIn) {
+                        isUserLogin()
+                        alert('Success fully logged in!')
+                        navigate("/home");
                         setSignInData({
                             email: '',
                             password: ''
                         })
-                    } else {
-                        alert('Please check! Something went wrong')
                     }
                 })
                 .catch((error) => {
+                    alert('Please check! Something went wrong')
                     console.error(error); // Handle any errors
                 });
         }
