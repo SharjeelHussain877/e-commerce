@@ -27,7 +27,7 @@ const settings = ['Profile', 'Cart', 'Logout'];
 
 function Navbar(props) {
   const user = useSelector((state) => state.userDetails.userInfo);
-
+console.log(user)
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

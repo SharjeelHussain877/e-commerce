@@ -21,7 +21,7 @@ export default function Cards({ products }) {
         <>
           {products.slice(0, 3).map(v => (
             <Card key={v.productId} sx={{ maxWidth: 280 }} data-aos="fade-up"
-              data-aos-duration="700" data-aos-delay="500" className='card'>
+              data-aos-duration="600" data-aos-delay="200" className='card'>
               <CardMedia
                 className='image'
                 component="img"

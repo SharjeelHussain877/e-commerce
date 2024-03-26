@@ -36,7 +36,6 @@ function Form() {
 
     const passWordState = validatePassword(password)
     const fullNameState = validateName(formData.full_name)
-    // const lastNameState = validateName(formData.last_name)
     const phoneNumberState = validatePhoneNumber(formData.phone_no)
     const emailState = validateEmail(formData.email)
 
@@ -51,20 +50,16 @@ function Form() {
     const signup = () => {
         if (formData.full_name == "") alert("Please enter your name");
         else if (!fullNameState.state) alert("Please enter your correct name");
-        // else if (formData.last_name == "") alert("Please enter your last name");
-        // else if (!lastNameState.state) alert("Please enter your correct last name");
         else if (formData.phone_no == "") alert("Please enter your Phone number");
         else if (!phoneNumberState.state) alert("please enter your correct Phone number");
         else if (formData.email == "") alert("Please enter your email");
         else if (!emailState.state) alert("please enter your correct email address");
-        // else if (formData.gender == "") alert("please select your gender")
-        // else if (formData.date_of_birth == "") alert("please fill date of birth");
         else if (password == "") alert("please fill password");
         else if (!passWordState.state) alert("please fill correct password");
         else if (formData.password == '') alert("Please fill confirm password");
         else if (formData.password != password) alert("Password doesn't match");
         else {
-            // sign_up(formData)
+            sign_up(formData)
             setPassword('')
             setFormData({
                 full_name: '',
@@ -79,19 +74,6 @@ function Form() {
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-    // const handleGenderChange = (event) => {
-    //     setFormData({
-    //         ...formData,
-    //         gender: event.target.value,
-    //     });
-    // };
-    // const handleDatePickerChange = (event) => {
-    //     setFormData({
-    //         ...formData,
-    //         date_of_birth: event.$d,
-    //     });
-    // };
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
@@ -120,17 +102,6 @@ function Form() {
                         error={formData.full_name && !fullNameState.state ? true : false}
                         helperText={formData.full_name && fullNameState.message}
                     />
-                    {/* <TextField
-                        value={formData.last_name}
-                        className='field'
-                        name="last_name"
-                        onChange={handleFormChange}
-                        color="warning"
-                        error={formData.last_name && !lastNameState.state ? true : false}
-                        id="outlined-error"
-                        label="Last name"
-                        helperText={formData.last_name && lastNameState.message}
-                    /> */}
                     <TextField
                         value={formData.phone_no}
                         className='field'
@@ -142,15 +113,6 @@ function Form() {
                         label="Phone number"
                         helperText={formData.phone_no && phoneNumberState.message}
                     />
-
-                    {/* <TextField
-                        name="city"
-                        onChange={handleFormChange}
-                        error={false}
-                        id="outlined-error"
-                        label="City"
-                        helperText={`${!false ? 'Please check your name' : ''}`}
-                    /> */}
                     <TextField
                         value={formData.email}
                         className='field'
@@ -163,37 +125,6 @@ function Form() {
                         helperText={formData.email && emailState.message}
 
                     />
-
-                    {/* <FormControl sx={{ m: 1, minWidth: 120 }}
-                        className='field'
-                    >
-                        <InputLabel id="demo-simple-select-standard-label" color='warning'>Gender</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-standard-label"
-                            id="demo-simple-select-standard"
-                            value={formData.gender}
-                            onChange={handleGenderChange}
-                            color='warning'
-                            label="Gender"
-                        >
-                            <MenuItem value="male">Male</MenuItem>
-                            <MenuItem value='female'>Female</MenuItem>
-                            <MenuItem value="custom">Custom</MenuItem>
-                        </Select>
-                    </FormControl> */}
-                    {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker label="Date of Birth"
-                        className='field'
-                        slotProps={{
-                            textField: ({ position }) => ({
-                                color: 'warning',
-                            }),
-                        }}
-                        name="date_of_birth"
-                        onChange={handleDatePickerChange} />
-                    </LocalizationProvider> */}
-
-
                     <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" color={password && passWordState.health != 100 ? "error" : 'warning'}
                         className='field'
                     >
@@ -218,17 +149,15 @@ function Form() {
                             label="Password"
                         />
 
-                        {password && passWordState.errors && (
-                            <FormHelperText error={true}>{
+                        <FormHelperText error={true}>
+                            {password && passWordState.errors && (
                                 passWordState.errors.map((value, index) => (
-                                    <div key={index}>
-
-                                        <Typography variant="body2">{value}</Typography>
-                                    </div>
+                                    <span key={index}>
+                                        {value}
+                                    </span>
                                 ))
-                            }</FormHelperText>
-                        )}
-
+                            )}
+                        </FormHelperText>
                     </FormControl>
 
                     <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" color='warning' className='field'>
@@ -261,7 +190,6 @@ function Form() {
                 </div>
                 <Button variant="outlined" color="warning" className='signup-btn' onClick={signup}>Sign up</Button>
             </Box>
-
         </section>
     )
 }

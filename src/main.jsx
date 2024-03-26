@@ -20,6 +20,7 @@ import { useSelector } from 'react-redux';
 import { dispatch } from "./redux/store.js";
 import { useEffect } from "react";
 import getData from './firebase/getDataFirestore.js'
+import isUserLogin from "./firebase/isLogin.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,16 +46,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </Provider>
 );
 
+
+
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
   const [isApiCalled, setStatus] = useState(false)
+
   useEffect(() => {
     const fetch = async () => {
       const data = await getData()
       setStatus(!isApiCalled)
     }
     fetch()
+    isUserLogin()
   }, [])
+
 
   return (
     <>
